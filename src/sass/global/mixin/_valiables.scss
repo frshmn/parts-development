@@ -1,0 +1,147 @@
+/*********************************************************
+	0.	VALIABLE SECTION
+**********************************************************/
+
+$f__base: 'Noto Sans JP', sans-serif;
+$f__accent: 'Noto Serif JP', serif;
+
+$c__dark: #302D2C;
+$c__light: #EEEEEF;
+$c__white: #FFFFFF;
+$c__neutral: #656565;
+
+$c__accent: #DB7093;
+$c__accent-2: #E8B3C4;
+
+// Define media query breakpoints
+$breakpoints: (
+  "sm": 599px,
+  "md": 1024px,
+  "lg": 1280px,
+  "xl": 1500px,
+);
+@mixin mq($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// placeholder for input
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// Clearfix mixin
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+//position mixin
+@mixin pos($pos, $top, $right, $bottom, $left) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+//Animation mixin setup
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+//Usage
+// Define animation name, and properties
+@include keyframes(fade-out) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+$set-prefix: '', -moz-, -webkit-, -ms-;
+@mixin PropertySetPrefix($name, $value) {
+  @each $prefix in $set-prefix {
+    #{$prefix}#{$name} : $value;
+  }
+}
+@mixin ValueSetPrefix($name, $value) {
+  @each $prefix in $set-prefix {
+    #{$name} : #{$prefix}$value;
+  }
+}
+/**********************************
+      END MODULE.SCSS
+**********************************/

@@ -1,0 +1,109 @@
+@use "../global" as *;
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  color: $c__dark;
+	font-family: $f__base;
+  font-size: 62.5%;
+	font-weight: 300;
+	line-height: 1;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 14px;
+  font-family: $f__base;
+}
+h1, h2, h3 {
+	font-family: $f__base;
+}
+h4, h5, h6 {
+  font-family: $f__base;
+}
+h1 {
+  font-size: 44px;
+  font-weight: 900;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 300;
+}
+h6 {
+  font-size: 14px;
+  font-weight: 300;
+}
+p {
+  line-height: 1;
+}
+a {
+	color: $c__dark;
+	border-color: $c__dark;
+  text-decoration: none;
+  &:hover {
+    // color: $c__accent;
+    text-decoration: none;
+  }
+}
+label {
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************
+	99.	END GLOBAL.SCSS
+**********************************************************/

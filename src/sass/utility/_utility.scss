@@ -1,0 +1,19 @@
+@use "../global" as *;
+
+.u-d {
+  &__lg {
+    display: block;
+    @include mq(sm) {
+      display: none!important;
+    }
+  }
+  &__sm {
+    display: none;
+    @include mq(sm) {
+      display: block!important;
+    }
+  }
+  &__none {
+    display: none!important;
+  }
+}
