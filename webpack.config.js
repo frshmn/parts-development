@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // 定数MODEに'production'か'development'どちらかを代入します
 // 'production'モードではファイルは圧縮して最適化され、'development'の場合は圧縮されず、デバッグに便利なソースマップが出力されます
-const MODE = "production";
+const MODE = "development";
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === "development";
